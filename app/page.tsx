@@ -46,9 +46,11 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0"></div>
         <div className="relative z-10 text-center text-white max-w-2xl space-y-6 px-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight drop-shadow-lg bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-300 text-transparent bg-clip-text font-serif">
             Compassionate Therapy for Healing and Growth
           </h1>
+
+
           <h2 className="text-xl md:text-2xl font-light tracking-wide drop-shadow-md">
             Dr. Serena Blake, PsyD – Clinical Psychologist in Los Angeles
           </h2>
@@ -72,7 +74,10 @@ export default function HomePage() {
             className="rounded-2xl shadow-lg object-cover"
           />
           <div>
-            <h3 className="text-3xl font-semibold mb-4 text-gray-900">About Dr. Serena Blake</h3>
+            <h3 className="text-3xl font-semibold mb-4 bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 text-transparent bg-clip-text">
+              About Dr. Serena Blake
+            </h3>
+
             <p className="text-gray-700 text-lg leading-relaxed">
               Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She specializes in helping individuals navigate anxiety, relationship challenges, and trauma recovery using a blend of evidence-based techniques and compassionate, client-focused care.
             </p>
@@ -97,42 +102,45 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div className="relative z-10 max-w-6xl mx-auto text-white">
-          <h3 className="text-4xl font-bold text-center mb-16 drop-shadow-md">Services Offered</h3>
+          <h3 className="text-5xl font-bold text-center mb-16 drop-shadow-md bg-gradient-to-r from-sky-300 via-blue-400 to-indigo-400 text-transparent bg-clip-text font-serif">
+            Services Offered
+          </h3>
           <div className="grid md:grid-cols-3 gap-10">
             {[
               {
                 title: "Anxiety & Stress Management",
                 desc: "Tools to manage overwhelm, panic, and chronic worry.",
-                extra: "Includes guided breathing, CBT strategies, and mindfulness training to help regain emotional balance.",
+                extra:
+                  "Includes guided breathing, CBT strategies, and mindfulness training to help regain emotional balance.",
                 image: "/anxiety.jpeg",
               },
               {
                 title: "Relationship Counseling",
                 desc: "Support for couples or individuals navigating relationships.",
-                extra: "Strengthen communication, rebuild trust, and explore healthy boundaries in romantic or family dynamics.",
+                extra:
+                  "Strengthen communication, rebuild trust, and explore healthy boundaries in romantic or family dynamics.",
                 image: "/relationship.png",
               },
               {
                 title: "Trauma Recovery",
                 desc: "Healing from past experiences using evidence-based approaches.",
-                extra: "Using trauma-informed care, EMDR techniques, and somatic awareness to help you feel safe and whole again.",
+                extra:
+                  "Using trauma-informed care, EMDR techniques, and somatic awareness to help you feel safe and whole again.",
                 image: "/trauma.jpg",
               },
             ].map((s, i) => (
               <div
                 key={i}
-                className="bg-black/50 text-white p-6 rounded-3xl border border-white/20 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+                className="bg-white/10 backdrop-blur-sm text-white p-6 rounded-3xl border border-white/20 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
               >
-                <Image
+                <img
                   src={s.image}
                   alt={s.title}
-                  width={500}
-                  height={192}
                   className="w-full h-48 object-cover rounded-xl mb-4 shadow-md"
                 />
-                <h4 className="text-2xl font-semibold mb-2">{s.title}</h4>
-                <p className="text-gray-200 mb-2">{s.desc}</p>
-                <p className="text-gray-300 text-sm">{s.extra}</p>
+                <h4 className="text-2xl font-bold mb-2 text-sky-200">{s.title}</h4>
+                <p className="mb-2 text-blue-100 font-medium">{s.desc}</p>
+                <p className="text-blue-200 text-sm italic">{s.extra}</p>
               </div>
             ))}
           </div>
@@ -140,23 +148,38 @@ export default function HomePage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-24 px-6 bg-gradient-to-b from-gray-100 to-white" id="faq">
+      <section className="py-24 px-6 bg-gradient-to-b from-blue-50 to-white" id="faq">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-4xl font-bold text-center mb-12 text-gray-900">Frequently Asked Questions</h3>
+          <h3 className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-500 text-transparent bg-clip-text font-serif">
+            Frequently Asked Questions
+          </h3>
+
+
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white/90 rounded-2xl shadow-lg border border-gray-300 backdrop-blur-sm transition-all duration-300"
+                className="bg-white/80 rounded-2xl shadow-xl border border-blue-200 backdrop-blur-md transition-all duration-300"
               >
                 <button
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full px-6 py-5 text-left flex justify-between items-center text-lg font-semibold text-gray-900 hover:bg-gray-100 rounded-t-2xl transition"
+                  className="w-full px-6 py-5 text-left flex justify-between items-center text-lg font-semibold text-blue-900 hover:bg-blue-50 rounded-t-2xl transition"
                 >
                   {faq.question}
-                  <span className={`text-2xl font-bold transition-transform duration-300 ${openFAQ === index ? 'rotate-45 text-blue-600' : 'text-gray-500'}`}>+</span>
+                  <span
+                    className={`text-2xl font-bold transition-transform duration-300 ${openFAQ === index ? "rotate-45 text-blue-600" : "text-gray-400"
+                      }`}
+                  >
+                    +
+                  </span>
                 </button>
-                <div className={`px-6 pb-5 text-gray-700 text-base leading-relaxed transition-all duration-300 ease-in-out ${openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+
+                <div
+                  className={`px-6 pb-5 text-blue-800 text-base leading-relaxed transition-all duration-300 ease-in-out ${openFAQ === index
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0 overflow-hidden"
+                    }`}
+                >
                   {faq.answer}
                 </div>
               </div>
@@ -165,12 +188,12 @@ export default function HomePage() {
         </div>
       </section>
 
+
       {/* Quote */}
       <section
         className="relative py-32 px-6 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/quote-bg.gif')" }}
       >
-        <div className="absolute inset-0 backdrop-blur-sm"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <p className="text-2xl md:text-3xl font-light italic leading-relaxed drop-shadow-md">
             &quot;Healing doesn&apos;t mean the damage never existed. It means the damage no longer controls your life.&quot;
@@ -182,7 +205,11 @@ export default function HomePage() {
       {/* Fees */}
       <section className="py-24 px-6 bg-white" id="fees">
         <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-gray-900">Session Fees</h3>
+          <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-sky-300 via-blue-800 to-indigo-800 text-transparent bg-clip-text font-serif drop-shadow-md">
+            Session Fees
+          </h3>
+
+
           <p className="text-xl md:text-2xl font-semibold text-blue-700 mb-2">💳 $200 <span className="text-base font-normal text-gray-700">/ Individual Session</span></p>
           <p className="text-xl md:text-2xl font-semibold text-blue-700">💑 $240 <span className="text-base font-normal text-gray-700">/ Couples Session</span></p>
         </div>
@@ -191,7 +218,10 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-100 py-12 px-4 md:px-6" id="contact">
         <div className="max-w-3xl mx-auto text-center space-y-5">
-          <h3 className="text-4xl font-extrabold font-serif">Contact & Booking</h3>
+          <h3 className="text-4xl md:text-4xl font-extrabold font-serif bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 text-transparent bg-clip-text drop-shadow-lg">
+            Contact & Booking
+          </h3>
+
           <p className="text-lg">1287 Maplewood Drive, Los Angeles, CA 90026</p>
           <p className="text-lg">📞 (323) 555-0192</p>
           <p className="text-lg">📧 <a href="mailto:serena@blakepsychology.com" className="underline text-blue-400 hover:text-blue-300">serena@blakepsychology.com</a></p>
