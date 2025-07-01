@@ -53,7 +53,7 @@ export default function HomePage() {
             Dr. Serena Blake, PsyD – Clinical Psychologist in Los Angeles
           </h2>
           <Link
-            href="/book-session/page.tsx"
+            href="/book-session"
             className="inline-block mt-4 bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition"
           >
             Book a Free Consult
@@ -200,7 +200,7 @@ export default function HomePage() {
             <p className="text-gray-300">In-person: Tue & Thu, 10 AM–6 PM</p>
             <p className="text-gray-300">Virtual via Zoom: Mon, Wed & Fri, 1 PM–5 PM</p>
           </div>
-          <Link href="/book-session/page.tsx" className="inline-block mt-4 bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition">
+          <Link href="/book-session" className="inline-block mt-4 bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition">
             Book a Free Consult
           </Link>
           <p className="mt-10 text-sm text-gray-500 font-mono tracking-wide">
